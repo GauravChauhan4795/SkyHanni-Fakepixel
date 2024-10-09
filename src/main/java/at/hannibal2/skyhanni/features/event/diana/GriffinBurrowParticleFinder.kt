@@ -55,8 +55,6 @@ object GriffinBurrowParticleFinder {
 
     @HandleEvent(onlyOnIsland = IslandType.HUB, priority = HandleEvent.LOW, receiveCancelled = true)
     fun onPacketReceive(event: PacketReceivedEvent) {
-        if (!isEnabled()) return
-        if (!config.burrowsSoopyGuess) return
         val packet = event.packet
 
         if (packet is S2APacketParticles) {
@@ -204,5 +202,5 @@ object GriffinBurrowParticleFinder {
         }
     }
 
-    private fun isEnabled() = DianaAPI.isDoingDiana()
+    private fun isEnabled() = true
 }

@@ -88,5 +88,5 @@ object AllBurrowsList {
         }
     }
 
-    fun isEnabled() = DianaAPI.isDoingDiana() && config.save
+    fun isEnabled() = true
 }

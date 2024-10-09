@@ -73,11 +73,6 @@ object GriffinBurrowHelper {
     fun onDebugDataCollect(event: DebugDataCollectEvent) {
         event.title("Griffin Burrow Helper")
 
-        if (!DianaAPI.isDoingDiana()) {
-            event.addIrrelevant("not doing diana")
-            return
-        }
-
         event.addData {
             add("targetLocation: ${targetLocation?.printWithAccuracy(1)}")
             add("guessLocation: ${guessLocation?.printWithAccuracy(1)}")

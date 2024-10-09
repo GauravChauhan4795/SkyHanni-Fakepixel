@@ -156,8 +156,8 @@ object HypixelData {
     val map get() = locraw["map"] ?: ""
 
     fun checkCurrentServerId() {
-        if (!LorenzUtils.inSkyBlock) return true
-        if (serverId != null) return true
+        if (!LorenzUtils.inSkyBlock) return 
+        if (serverId != null) return 
         if (LorenzUtils.lastWorldSwitch.passedSince() < 1.seconds) return
         if (!TabListData.fullyLoaded) return
 

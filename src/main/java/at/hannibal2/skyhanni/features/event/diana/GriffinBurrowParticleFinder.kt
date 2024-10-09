@@ -40,11 +40,6 @@ object GriffinBurrowParticleFinder {
     fun onDebugDataCollect(event: DebugDataCollectEvent) {
         event.title("Griffin Burrow Particle Finder")
 
-        if (!DianaAPI.isDoingDiana()) {
-            event.addIrrelevant("not doing diana")
-            return
-        }
-
         event.addData {
             add("burrows: ${burrows.size}")
             for (burrow in burrows.values) {

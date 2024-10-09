@@ -46,11 +46,11 @@ object HypixelData {
     // TODO add regex tests
     private val serverNameConnectionPattern by patternGroup.pattern(
         "servername.connection",
-        "(?<prefix>.+\\.)?hypixel\\.net",
+        "(?<prefix>.+\\.)?fakepixel\\.fun",
     )
     private val serverNameScoreboardPattern by patternGroup.pattern(
         "servername.scoreboard",
-        "§e(?<prefix>.+\\.)?hypixel\\.net",
+        "§e(?<prefix>.+\\.)?fakepixel\\.fun",
     )
     private val islandNamePattern by patternGroup.pattern(
         "islandname",
@@ -156,8 +156,8 @@ object HypixelData {
     val map get() = locraw["map"] ?: ""
 
     fun checkCurrentServerId() {
-        if (!LorenzUtils.inSkyBlock) return
-        if (serverId != null) return
+        if (!LorenzUtils.inSkyBlock) return true
+        if (serverId != null) return true
         if (LorenzUtils.lastWorldSwitch.passedSince() < 1.seconds) return
         if (!TabListData.fullyLoaded) return
 
